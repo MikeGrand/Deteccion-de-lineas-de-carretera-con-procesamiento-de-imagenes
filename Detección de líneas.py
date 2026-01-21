@@ -2,7 +2,7 @@ import argparse
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
-from tqdm import tqdm  # Importar la librería de progreso visual
+from tqdm import tqdm 
 
 parser = argparse.ArgumentParser()
 
@@ -16,12 +16,12 @@ if not capture.isOpened():
     exit()
 
 # Obtener propiedades del video
-fps = int(capture.get(cv2.CAP_PROP_FPS))  # Cuadros por segundo
-width = int(capture.get(cv2.CAP_PROP_FRAME_WIDTH))  # Ancho del frame
-height = int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT))  # Alto del frame
+fps = int(capture.get(cv2.CAP_PROP_FPS)) 
+width = int(capture.get(cv2.CAP_PROP_FRAME_WIDTH)) 
+height = int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT)) 
 
 # Definir códec y crear VideoWriter para guardar el resultado
-fourcc = cv2.VideoWriter_fourcc(*'XVID')  # Codec para formato AVI
+fourcc = cv2.VideoWriter_fourcc(*'XVID')  
 out = cv2.VideoWriter("Salida.MP4", fourcc, fps, (width, height))
 
 # Leer primer fotograma para definir la máscara
@@ -29,7 +29,7 @@ ret, frame = capture.read()
 
 def crear_mascara_rectangular(frame, x1, y1, x2, y2):
     mask = np.zeros_like(frame)  # Máscara negra del mismo tamaño del frame
-    cv2.rectangle(mask, (x1, y1), (x2, y2), (255, 255, 255), -1)  # Dibujar el rectángulo en la máscara
+    cv2.rectangle(mask, (x1, y1), (x2, y2), (255, 255, 255), -1)
     return mask
 
 # Definir las coordenadas del rectángulo para la máscara
@@ -90,7 +90,7 @@ while capture.isOpened():
     
     if not ret:
         print("\nVideo finalizado. Cerrando programa automáticamente...")
-        break  # Salimos del loop si ya no hay más fotogramas 
+        break  # Salimos del loop si ya no hay más fotogramas aunque para un evento real nunca deberia terminar 
         
     cv2.imshow('Original Frame', frame) # Mostrar fotograma original
     frame_t1 = trasf1(frame) # Aplica la trasnformacion 1
@@ -105,7 +105,7 @@ while capture.isOpened():
 
     # Detectar tecla presionada
     key = cv2.waitKey(1) & 0xFF
-    print(f"\rTecla presionada: {chr(key) if 32 <= key <= 126 else key}  ", end="")  # Sobrescribir línea en terminal
+    print(f"\rTecla presionada: {chr(key) if 32 <= key <= 126 else key}  ", end="")  
 
     if key == ord("z"):  # Salir con 'z'
         print("\nTecla 'z' detectada. Saliendo...")
@@ -119,4 +119,5 @@ progress_bar.close()
 capture.release()
 out.release()
 cv2.destroyAllWindows()
+
 print("✅ Programa finalizado correctamente.")
