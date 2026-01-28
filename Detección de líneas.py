@@ -79,33 +79,30 @@ while capture.isOpened():
         print("\nVideo finalizado. Cerrando programa automáticamente...")
         break  
         
-    cv2.imshow('Original Frame', frame) # Mostrar fotograma original
-    frame_t1 = trasf1(frame) # Aplica la trasnformacion 1
-    cv2.imshow('Procesado', frame_t1) # Mostrar fotograma procesado
-    Eframe = trasf2(frame_t1) # Aplicar el transformacion 2
-    Eframe_recortado = recorte(Eframe, x1, y1, x2, y2)  # Recorte rectangular
-    cv2.imshow('Resultado Final', Eframe_recortado)  # Mostrar resultado final
-    out.write(Eframe_recortado)  # Guardar el procesado en el video de salida
+    cv2.imshow('Original Frame', frame) 
+    frame_t1 = trasf1(frame) 
+    cv2.imshow('Procesado', frame_t1)
+    Eframe = trasf2(frame_t1) 
+    Eframe_recortado = recorte(Eframe, x1, y1, x2, y2) 
+    cv2.imshow('Resultado Final', Eframe_recortado)  
+    out.write(Eframe_recortado) 
         
-        # Guardar resultado en video
     out.write(Eframe_recortado)
 
-    # Detectar tecla presionada
     key = cv2.waitKey(1) & 0xFF
     print(f"\rTecla presionada: {chr(key) if 32 <= key <= 126 else key}  ", end="")  
 
-    if key == ord("z"):  # Salir con 'z'
+    if key == ord("z"): 
         print("\nTecla 'z' detectada. Saliendo...")
         break
 
-    # Actualizar barra de progreso solo si no se ha detenido
     progress_bar.update(1)
 
-# Cerrar recursos
 progress_bar.close()
 capture.release()
 out.release()
 cv2.destroyAllWindows()
 
-print("✅ Programa finalizado correctamente.")
+print(" Programa finalizado correctamente.")
+
 
