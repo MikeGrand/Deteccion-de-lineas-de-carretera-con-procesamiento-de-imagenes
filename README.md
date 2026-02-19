@@ -63,6 +63,12 @@ Se recomienda que el archivo .py y el video se encuentren dentro de la misma car
 
 Esto simplifica las rutas y evita errores de lectura del archivo.
 
-PS C:\Users\> python “Ruta del archivo .py” -v “Ruta del video”
+## Ejecución del Programa
 
-Nota: Para que sea mas eficiente ambos archivos deben estar en una misma carpeta. 
+El programa debe ejecutarse desde la terminal proporcionando la ruta del archivo de video mediante el parámetro --video_path (o -v).
+
+Sintaxis de ejecución:
+python "Ruta_del_archivo.py" -v "Ruta_del_video"
+
+Ejemplo en PowerShell:
+PS C:\Users> python "C:\Proyecto\procesamiento.py" -v "C:\Proyecto\video.mp4"
