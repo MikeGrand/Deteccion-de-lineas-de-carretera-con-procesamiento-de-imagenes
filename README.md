@@ -55,10 +55,13 @@ Esto permite obtener una representación limpia y procesada, útil como etapa pr
 
 . tqdm (barra de progreso)
 
+## Recomendación
 
-Para correr el archivo o el programa se debe hacer a través de la terminal en este caso proporcionando el camino al archivo de video usando el parámetro --video_path. 
+Para mayor eficiencia y facilidad de ejecución:
 
-Por lo que primero debe poner el python, después incluir la ruta donde esta el archivo .py y seguidamente -v para el llamado del video y después va la ruta del video, para que así pueda también entrar el video y comenzar el progreso, en este caso quedaría la forma quedaría algo así.
+Se recomienda que el archivo .py y el video se encuentren dentro de la misma carpeta.
+
+Esto simplifica las rutas y evita errores de lectura del archivo.
 
 PS C:\Users\> python “Ruta del archivo .py” -v “Ruta del video”
 
