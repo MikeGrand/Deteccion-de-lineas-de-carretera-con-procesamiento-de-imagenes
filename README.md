@@ -30,6 +30,20 @@ El método desarrollado incluye las siguientes etapas fundamentales del Procesam
 
 Es importante destacar que no se utilizaron operadores de alto nivel predefinidos de OpenCV para segmentación automática.
 Cada etapa fue implementada de manera controlada y justificada teóricamente conforme a los fundamentos académicos del procesamiento digital de imágenes.
+
+Resultado:
+
+- El sistema genera un video de salida donde:
+
+- Las líneas de la carretera aparecen claramente destacadas en color blanco.
+
+- El resto de la escena permanece en negro.
+
+- Se conserva únicamente la región de interés relevante para análisis vial.
+
+Esto permite obtener una representación limpia y procesada, útil como etapa previa para algoritmos de detección de carriles o visión autónoma.
+
+
 Para correr el archivo o el programa se debe hacer a través de la terminal en este caso proporcionando el camino al archivo de video usando el parámetro --video_path. 
 
 Por lo que primero debe poner el python, después incluir la ruta donde esta el archivo .py y seguidamente -v para el llamado del video y después va la ruta del video, para que así pueda también entrar el video y comenzar el progreso, en este caso quedaría la forma quedaría algo así.
