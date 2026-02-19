@@ -31,7 +31,7 @@ El método desarrollado incluye las siguientes etapas fundamentales del Procesam
 Es importante destacar que no se utilizaron operadores de alto nivel predefinidos de OpenCV para segmentación automática.
 Cada etapa fue implementada de manera controlada y justificada teóricamente conforme a los fundamentos académicos del procesamiento digital de imágenes.
 
-Resultado:
+## Resultado:
 
 - El sistema genera un video de salida donde:
 
@@ -42,6 +42,18 @@ Resultado:
 - Se conserva únicamente la región de interés relevante para análisis vial.
 
 Esto permite obtener una representación limpia y procesada, útil como etapa previa para algoritmos de detección de carriles o visión autónoma.
+
+## Tecnologías Utilizadas
+
+- Python 3
+
+- OpenCV
+
+- NumPy
+
+- Matplotlib
+
+. tqdm (barra de progreso)
 
 
 Para correr el archivo o el programa se debe hacer a través de la terminal en este caso proporcionando el camino al archivo de video usando el parámetro --video_path. 
