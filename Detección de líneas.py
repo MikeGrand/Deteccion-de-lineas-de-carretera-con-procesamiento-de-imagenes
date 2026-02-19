@@ -106,3 +106,4 @@ cv2.destroyAllWindows()
 print(" Programa finalizado correctamente.")
 
 
+
